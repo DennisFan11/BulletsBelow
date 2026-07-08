@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://asset/Libs/dialog/BaseCharacter.gd" id="1"]
+
+[node name="BaseCharacter" type="TextureRect"]
+anchors_preset = 15
+anchor_top = 0.2
+anchor_bottom = 1.0
+anchor_right = 0.4
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("1")

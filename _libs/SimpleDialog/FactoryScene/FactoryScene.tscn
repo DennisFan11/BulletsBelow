@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b3lib1alrwgnm"]
+
+[ext_resource type="Script" uid="uid://fdeou26444pe" path="res://asset/Libs/dialog/FactoryScene/factory_scene.gd" id="1_3de6e"]
+[ext_resource type="Script" uid="uid://k5yr4gn4yhga" path="res://asset/Libs/dialog/FactoryScene/button.gd" id="2_3apj5"]
+[ext_resource type="PackedScene" uid="uid://b6dj28qg1xer" path="res://asset/Libs/dialog/Manager/DialogManager.tscn" id="3_44s2s"]
+[ext_resource type="Script" uid="uid://cp2kdqw5c6wsu" path="res://asset/Libs/dialog/FactoryScene/button_2.gd" id="3_gwpi6"]
+[ext_resource type="Script" uid="uid://d2sjyo5h8j0ai" path="res://asset/Libs/dialog/FactoryScene/button_3.gd" id="4_8w6ar"]
+[ext_resource type="Script" uid="uid://bpai87gkrmwkl" path="res://asset/Libs/dialog/FactoryScene/button_4.gd" id="5_ng2u6"]
+[ext_resource type="Script" uid="uid://csogc1rg0h1yi" path="res://asset/Libs/dialog/FactoryScene/button_5.gd" id="6_2wdb7"]
+
+[node name="FactoryScene" type="Node2D" unique_id=2042600856]
+script = ExtResource("1_3de6e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1983550387]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1828216903]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/UI" unique_id=856815480]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 53.0
+offset_right = 267.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 50
+text = "問題識別"
+script = ExtResource("2_3apj5")
+
+[node name="Button2" type="Button" parent="CanvasLayer/UI" unique_id=1902982118]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 128.0
+offset_right = 416.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 50
+text = "資料蒐集與分析"
+script = ExtResource("3_gwpi6")
+
+[node name="Button3" type="Button" parent="CanvasLayer/UI" unique_id=179588715]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 203.0
+offset_right = 319.0
+offset_bottom = 266.0
+theme_override_font_sizes/font_size = 50
+text = "建立演算法"
+script = ExtResource("4_8w6ar")
+
+[node name="Button4" type="Button" parent="CanvasLayer/UI" unique_id=1638255894]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 274.0
+offset_right = 221.0
+offset_bottom = 337.0
+theme_override_font_sizes/font_size = 50
+text = "自動化"
+script = ExtResource("5_ng2u6")
+
+[node name="Button5" type="Button" parent="CanvasLayer/UI" unique_id=342938724]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 341.0
+offset_right = 323.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 50
+text = "測試與除錯"
+script = ExtResource("6_2wdb7")
+
+[node name="DialogManager" parent="." unique_id=503122772 instance=ExtResource("3_44s2s")]
