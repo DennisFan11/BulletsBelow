@@ -4,7 +4,7 @@ extends RefCounted
 var _next_time := 0.0
 var _cd_time := 0.0  ## 冷卻總長度
 
-func get_ticks_sec() -> float:
+static func get_ticks_sec() -> float:
 	return Time.get_ticks_msec()/1000.0
 
 func is_ready() -> bool:

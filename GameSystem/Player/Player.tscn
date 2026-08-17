@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cr5co3d2mcjng"]
+
+[ext_resource type="Script" uid="uid://d1yc3i214nw7u" path="res://GameSystem/Player/player.gd" id="1_01jck"]
+[ext_resource type="PackedScene" uid="uid://n4v10dlexmkh" path="res://Components/BotBody/BotBody.tscn" id="1_p3nnt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p3nnt"]
+radius = 35.0
+
+[node name="Player" type="Node2D" unique_id=674412155 node_paths=PackedStringArray("character_body_2d", "bot_body")]
+script = ExtResource("1_01jck")
+character_body_2d = NodePath("CharacterBody2D")
+bot_body = NodePath("CharacterBody2D/BotBody")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=456050274]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1642127070]
+shape = SubResource("CircleShape2D_p3nnt")
+
+[node name="BotBody" parent="CharacterBody2D" unique_id=1386544545 instance=ExtResource("1_p3nnt")]
+aim_global = Vector2(31.632233, -38.584564)

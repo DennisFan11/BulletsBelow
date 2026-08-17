@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b4yxdv0ypnp57"]
+
+[ext_resource type="Script" uid="uid://b2jj6b4aqnqjm" path="res://GameSystem/GameLoop.gd" id="1_oy0f7"]
+[ext_resource type="PackedScene" uid="uid://cr5co3d2mcjng" path="res://GameSystem/Player/Player.tscn" id="1_xekl3"]
+[ext_resource type="PackedScene" uid="uid://cbe2fvag8lgtr" path="res://GameSystem/WallManager/WallManager.tscn" id="2_1p4y8"]
+[ext_resource type="PackedScene" uid="uid://c8i6lpswqbghw" path="res://GameSystem/CameraManager/CameraManager.tscn" id="3_24kq1"]
+
+[node name="GameLoop" type="Node2D" unique_id=336709600]
+script = ExtResource("1_oy0f7")
+
+[node name="WallManager" parent="." unique_id=831813030 instance=ExtResource("2_1p4y8")]
+
+[node name="Player" parent="." unique_id=674412155 instance=ExtResource("1_xekl3")]
+
+[node name="Camera2D" parent="." unique_id=1624645162 instance=ExtResource("3_24kq1")]

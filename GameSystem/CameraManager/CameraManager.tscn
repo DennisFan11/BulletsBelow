@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c8i6lpswqbghw"]
+
+[ext_resource type="Script" uid="uid://pb2xsccqbgr0" path="res://GameSystem/CameraManager/CameraManager.gd" id="1_i8ykf"]
+
+[node name="Camera2D" type="Camera2D" unique_id=1624645162]
+zoom = Vector2(0.7, 0.7)
+script = ExtResource("1_i8ykf")

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://odc7fcnqdh6d"]
+
+[ext_resource type="PackedScene" uid="uid://b4yxdv0ypnp57" path="res://GameSystem/GameLoop.tscn" id="1_bp23s"]
+
+[node name="Lobby" unique_id=336709600 instance=ExtResource("1_bp23s")]

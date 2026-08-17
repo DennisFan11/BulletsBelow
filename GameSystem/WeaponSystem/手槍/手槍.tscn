@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c3n6mdy0lrsis"]
+
+[ext_resource type="PackedScene" uid="uid://b0rg21e0ks37y" path="res://GameSystem/WeaponSystem/WeaponBase.tscn" id="1_xrwnx"]
+[ext_resource type="Texture2D" uid="uid://ckglbt7cjkow0" path="res://GameSystem/WeaponSystem/手槍/ 手槍.svg" id="2_07vu5"]
+
+[node name="手槍" unique_id=519454577 node_paths=PackedStringArray("r_hand", "l_hand") instance=ExtResource("1_xrwnx")]
+r_hand = NodePath("RMarker/RHand")
+l_hand = NodePath("LMarker/LHand")
+
+[node name="手槍" type="Sprite2D" parent="." index="0" unique_id=472009474]
+position = Vector2(16, 10)
+texture = ExtResource("2_07vu5")
+
+[node name="RMarker" parent="." index="1" unique_id=1906761715]
+position = Vector2(-12, 14)
+
+[node name="LMarker" parent="." index="2" unique_id=2083862395]
+position = Vector2(31, 6)
