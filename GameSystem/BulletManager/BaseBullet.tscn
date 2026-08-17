@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://mkhirwb7w2d1"]
+
+[ext_resource type="Script" uid="uid://1maei8jccy4o" path="res://GameSystem/BulletManager/BaseBullet.gd" id="1_sgssj"]
+[ext_resource type="PackedScene" uid="uid://bx1jkn47grc7h" path="res://Components/HitBox/Hitbox.tscn" id="2_yx3xx"]
+
+[node name="BaseBullet" type="Node2D" unique_id=1845915051 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_sgssj")
+hitbox = NodePath("Hitbox")
+
+[node name="Hitbox" parent="." unique_id=694893009 instance=ExtResource("2_yx3xx")]
+
+[connection signal="hit_wall" from="Hitbox" to="." method="_on_hitbox_hit_wall"]
+[connection signal="on_hit" from="Hitbox" to="." method="_on_hitbox_on_hit"]

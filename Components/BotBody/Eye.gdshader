@@ -65,6 +65,15 @@ uniform float smoothness
 
 
 // ================================
+// 顏色
+// ================================
+
+uniform vec4 color
+	: source_color
+	= vec4(1.0, 1.0, 1.0, 1.0);
+
+
+// ================================
 // 整體 UV Spherize
 // ================================
 
@@ -178,7 +187,7 @@ void fragment() {
 
 
 	COLOR = vec4(
-		vec3(1.0),
-		alpha
+		color.rgb,
+		color.a * alpha
 	);
 }

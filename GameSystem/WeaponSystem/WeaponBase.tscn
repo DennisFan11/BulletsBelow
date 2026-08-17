@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dnchr7n2467o5" path="res://GameSystem/WeaponSystem/WeaponBase.gd" id="1_q4n3b"]
 [ext_resource type="Texture2D" uid="uid://c7h8m3wfcj8q8" path="res://GameSystem/hand.svg" id="1_t31mf"]
 
-[node name="WeaponBase" type="Node2D" unique_id=519454577]
+[node name="WeaponBase" type="Node2D" unique_id=519454577 node_paths=PackedStringArray("r_hand", "l_hand")]
 script = ExtResource("1_q4n3b")
+r_hand = NodePath("RMarker/RHand")
+l_hand = NodePath("LMarker/LHand")
 
 [node name="RMarker" type="Marker2D" parent="." unique_id=1906761715]
 
@@ -15,3 +17,7 @@ texture = ExtResource("1_t31mf")
 
 [node name="LHand" type="Sprite2D" parent="LMarker" unique_id=1953821365]
 texture = ExtResource("1_t31mf")
+
+[node name="FireMarker" type="Marker2D" parent="." unique_id=453170520]
+unique_name_in_owner = true
+position = Vector2(7, 0)

@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://d1yc3i214nw7u" path="res://GameSystem/Player/player.gd" id="1_01jck"]
 [ext_resource type="PackedScene" uid="uid://n4v10dlexmkh" path="res://Components/BotBody/BotBody.tscn" id="1_p3nnt"]
+[ext_resource type="PackedScene" uid="uid://bhdiwlq7rky3s" path="res://Components/HurtBox/Hurtbox.tscn" id="4_qfqc4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p3nnt"]
 radius = 35.0
 
-[node name="Player" type="Node2D" unique_id=674412155 node_paths=PackedStringArray("character_body_2d", "bot_body")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65kcq"]
+radius = 44.0
+height = 92.0
+
+[node name="Player" type="Node2D" unique_id=674412155 node_paths=PackedStringArray("hurtbox", "character_body_2d", "bot_body")]
 script = ExtResource("1_01jck")
+hurtbox = NodePath("CharacterBody2D/Hurtbox")
 character_body_2d = NodePath("CharacterBody2D")
 bot_body = NodePath("CharacterBody2D/BotBody")
 
@@ -17,4 +23,11 @@ bot_body = NodePath("CharacterBody2D/BotBody")
 shape = SubResource("CircleShape2D_p3nnt")
 
 [node name="BotBody" parent="CharacterBody2D" unique_id=1386544545 instance=ExtResource("1_p3nnt")]
-aim_global = Vector2(31.632233, -38.584564)
+aim_global = Vector2(1270, 760)
+
+[node name="Hurtbox" parent="CharacterBody2D" unique_id=775912540 instance=ExtResource("4_qfqc4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Hurtbox" unique_id=1087974969]
+shape = SubResource("CapsuleShape2D_65kcq")
+
+[connection signal="hit" from="CharacterBody2D/Hurtbox" to="." method="take_hit"]

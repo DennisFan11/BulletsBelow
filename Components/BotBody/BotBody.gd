@@ -12,12 +12,16 @@ extends Node2D
 @export var eye_shader: ColorRect
 
 
+func _ready() -> void:
+	_set_eye_color()
+
 func _process(dt: float) -> void:
 	_move(dt)
 	_weapon_rot()
 	_eye_move(dt)
 	
 	if Engine.is_editor_hint(): 
+		_set_eye_color()
 		aim_global = get_global_mouse_position()
 
 
@@ -26,6 +30,21 @@ func _process(dt: float) -> void:
 @export var 武器動畫: bool = false
 @export var aim_global: Vector2
 @export var weapon: WeaponBase
+
+func add_weapon(new_weapon: WeaponBase)-> void:
+	remove_weapon()
+	add_child(new_weapon)
+	weapon = new_weapon
+
+## 清理舊武器
+func remove_weapon()-> void:
+	if is_instance_valid(weapon):
+		weapon.queue_free()
+
+	
+
+
+
 
 func _weapon_rot():
 	if not weapon: return
@@ -36,16 +55,23 @@ func _weapon_rot():
 	weapon.global_rotation = global_aim_vec.angle()
 	
 	weapon.flip = global_aim_vec.dot(Vector2.LEFT) > 0.0
-		
 	
 	
+## 眼睛顏色
+@export var eye_color: Color
+func _set_eye_color()-> void:
+	var mat := (eye_shader.material as ShaderMaterial)
+	mat.set_shader_parameter("color", eye_color)
+
 ## 眼睛動畫
+
 const EYE_DIST: float = 0.3
 const VIEW_R: float = 500.0
 
 var _drag_pos: Vector2 = Vector2.ZERO
 const FOLLOW_SPEED: float = 5.0
-func _eye_move(dt: float):
+
+func _eye_move(dt: float)-> void:
 	var target_vec := aim_global- global_position
 	var target_offset := clampf(target_vec.length()/VIEW_R, 0.0, EYE_DIST)
 	var target := target_vec.normalized() * target_offset
@@ -65,7 +91,7 @@ func _eye_move(dt: float):
 @export var 左右腳交替間隔: float = 0.7
 @export var 交替曲線: Curve
 
-func _move(dt: float) -> void:
+func _move(_dt: float) -> void:
 	if 正在移動:
 		var time: float = CooldownTimer.get_ticks_sec()
 		var progressL: float = fmod(time, 左右腳交替間隔)/ 左右腳交替間隔

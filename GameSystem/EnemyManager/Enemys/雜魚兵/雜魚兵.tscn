@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://colgemkwuy50k"]
+
+[ext_resource type="PackedScene" uid="uid://ci03vg74iuo0e" path="res://GameSystem/EnemyManager/EnemyBase.tscn" id="1_r1d2u"]
+[ext_resource type="Script" uid="uid://dvsh0hnyng8rf" path="res://GameSystem/EnemyManager/Enemys/雜魚兵/雜魚兵.gd" id="2_8wq2o"]
+[ext_resource type="PackedScene" uid="uid://n4v10dlexmkh" path="res://Components/BotBody/BotBody.tscn" id="2_i6hsp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6hsp"]
+radius = 40.012497
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6hsp"]
+radius = 49.0
+height = 118.0
+
+[node name="雜魚兵" unique_id=1892071397 node_paths=PackedStringArray("bot_body") instance=ExtResource("1_r1d2u")]
+script = ExtResource("2_8wq2o")
+bot_body = NodePath("CharacterBody2D/BotBody")
+
+[node name="BotBody" parent="CharacterBody2D" parent_id_path=PackedInt32Array(337881859) index="0" unique_id=1386544545 instance=ExtResource("2_i6hsp")]
+aim_global = Vector2(942, 736)
+eye_color = Color(1, 0.3372549, 0.3372549, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" parent_id_path=PackedInt32Array(337881859) index="1" unique_id=1811861048]
+shape = SubResource("CircleShape2D_i6hsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/HurtBox" parent_id_path=PackedInt32Array(1396053582) index="0" unique_id=1497134421]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_i6hsp")

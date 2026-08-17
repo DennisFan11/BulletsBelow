@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dngv530u7cetw"]
+
+[ext_resource type="Script" uid="uid://camoc4wbnjg5b" path="res://GameSystem/BulletManager/BulletManager.gd" id="1_6xmsq"]
+
+[node name="BulletManager" type="Node2D" unique_id=643958194]
+script = ExtResource("1_6xmsq")

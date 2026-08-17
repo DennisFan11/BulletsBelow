@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cxule0iv5s7ja"]
+
+[ext_resource type="Script" uid="uid://b638v1fgkui5g" path="res://Components/EnemyVision/EnemyVision.gd" id="1_64ubm"]
+
+[node name="EnemyVision" type="Node2D" unique_id=190027691]
+script = ExtResource("1_64ubm")

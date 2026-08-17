@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://b0rg21e0ks37y" path="res://GameSystem/WeaponSystem/WeaponBase.tscn" id="1_xrwnx"]
 [ext_resource type="Texture2D" uid="uid://ckglbt7cjkow0" path="res://GameSystem/WeaponSystem/手槍/ 手槍.svg" id="2_07vu5"]
+[ext_resource type="Script" uid="uid://bc78jwynwmo5p" path="res://GameSystem/WeaponSystem/手槍/手槍.gd" id="2_8h0st"]
 
-[node name="手槍" unique_id=519454577 node_paths=PackedStringArray("r_hand", "l_hand") instance=ExtResource("1_xrwnx")]
-r_hand = NodePath("RMarker/RHand")
-l_hand = NodePath("LMarker/LHand")
+[node name="手槍" unique_id=519454577 instance=ExtResource("1_xrwnx")]
+script = ExtResource("2_8h0st")
 
 [node name="手槍" type="Sprite2D" parent="." index="0" unique_id=472009474]
 position = Vector2(16, 10)
@@ -16,3 +16,6 @@ position = Vector2(-12, 14)
 
 [node name="LMarker" parent="." index="2" unique_id=2083862395]
 position = Vector2(31, 6)
+
+[node name="FireMarker" parent="." index="3" unique_id=453170520]
+position = Vector2(52, 0)

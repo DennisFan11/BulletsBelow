@@ -4,3 +4,8 @@ extends Node2D
 
 func _ready() -> void:
 	DI.injection(self, true)
+
+
+
+
+## TODO 遊戲生命週期控制

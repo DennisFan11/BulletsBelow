@@ -1,16 +1,11 @@
 [gd_scene format=3 uid="uid://df2bpm23jp3h7"]
 
-[ext_resource type="Texture2D" uid="uid://cp70gggh6pt4y" path="res://GameSystem/WallManager/Tiles/StoneWall/Wall.svg" id="1_1gjs8"]
+[ext_resource type="PackedScene" uid="uid://de2l7g2tgqc3o" path="res://GameSystem/WallManager/BaseWall.tscn" id="1_1gjs8"]
+[ext_resource type="Texture2D" uid="uid://cp70gggh6pt4y" path="res://GameSystem/WallManager/Tiles/StoneWall/Wall.svg" id="2_31er5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gjs8"]
-size = Vector2(128, 128)
+[node name="StoneWall" unique_id=2082610020 instance=ExtResource("1_1gjs8")]
 
-[node name="StoneWall" type="StaticBody2D" unique_id=1145532012]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1121146694]
-shape = SubResource("RectangleShape2D_1gjs8")
-
-[node name="Wall" type="Sprite2D" parent="." unique_id=64208964]
-position = Vector2(2, -64.5)
-scale = Vector2(0.7891062, 0.8179013)
-texture = ExtResource("1_1gjs8")
+[node name="Wall" type="Sprite2D" parent="." index="0" unique_id=1571339470]
+position = Vector2(-1.5000031, -62.500008)
+scale = Vector2(0.7967032, 0.7807017)
+texture = ExtResource("2_31er5")

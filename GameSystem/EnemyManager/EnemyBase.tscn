@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ci03vg74iuo0e"]
+
+[ext_resource type="Script" uid="uid://e6xtsp77n40v" path="res://GameSystem/EnemyManager/EnemyBase.gd" id="1_0lkga"]
+[ext_resource type="Script" uid="uid://c0mawlsks5tmf" path="res://Components/HurtBox/hurtbox.gd" id="2_lhs8f"]
+[ext_resource type="PackedScene" uid="uid://cxule0iv5s7ja" path="res://Components/EnemyVision/EnemyVision.tscn" id="3_555qb"]
+
+[node name="EnemyBase" type="Node2D" unique_id=1892071397 node_paths=PackedStringArray("hurt_box", "enemy_vision", "character_body_2d")]
+script = ExtResource("1_0lkga")
+hurt_box = NodePath("CharacterBody2D/HurtBox")
+enemy_vision = NodePath("CharacterBody2D/EnemyVision")
+character_body_2d = NodePath("CharacterBody2D")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=337881859]
+
+[node name="HurtBox" type="Area2D" parent="CharacterBody2D" unique_id=1396053582]
+script = ExtResource("2_lhs8f")
+team = 1
+metadata/_custom_type_script = "uid://c0mawlsks5tmf"
+
+[node name="EnemyVision" parent="CharacterBody2D" unique_id=190027691 instance=ExtResource("3_555qb")]
+
+[connection signal="hit" from="CharacterBody2D/HurtBox" to="." method="take_hit"]

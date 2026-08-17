@@ -15,11 +15,12 @@ point_count = 6
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mugbd"]
 resource_local_to_scene = true
 shader = ExtResource("5_2s1l4")
-shader_parameter/pos_a = Vector2(0.20960958, -0.21462485)
-shader_parameter/pos_b = Vector2(0.20960952, -0.21462491)
+shader_parameter/pos_a = Vector2(-0.29596958, -0.049010433)
+shader_parameter/pos_b = Vector2(-0.2917875, -0.04820046)
 shader_parameter/radius_a = 0.22999999485904
 shader_parameter/radius_b = 0.17999999597664
 shader_parameter/smoothness = 0.214000010165
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/pup_offset = Vector2(0, 0)
 shader_parameter/spherize_strength = -4.4704000146111866e-07
 shader_parameter/drift_amount = 0.02800000133
@@ -35,20 +36,20 @@ body = NodePath("Body")
 eye_frame = NodePath("EyeFrame")
 eye_shader = NodePath("EyeFrame/EyeShader")
 "武器動畫" = true
-aim_global = Vector2(128.54684, -131.62254)
+aim_global = Vector2(-373.47064, -61.844055)
 weapon = NodePath("TestNode/手槍")
+eye_color = Color(1, 1, 1, 1)
 "左右腳交替間隔" = 0.41
 "交替曲線" = SubResource("Curve_4138x")
 
 [node name="左腳" type="Sprite2D" parent="." unique_id=281635396]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.19951315)
 position = Vector2(-20, 34.5)
 texture = ExtResource("1_pcvgg")
 
 [node name="右腳" type="Sprite2D" parent="." unique_id=1557407541]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.6002353)
+modulate = Color(1, 1, 1, 0)
 position = Vector2(18, 33.5)
 texture = ExtResource("1_pcvgg")
 
@@ -77,5 +78,7 @@ script = ExtResource("5_mugbd")
 metadata/_custom_type_script = "uid://cvx5furf1suqy"
 
 [node name="手槍" parent="TestNode" unique_id=519454577 instance=ExtResource("5_4138x")]
-position = Vector2(6.9869857, -7.1541615)
-rotation = -0.7972195
+position = Vector2(-9.865652, -1.633681)
+rotation = -2.977489
+scale = Vector2(1, -1)
+flip = true

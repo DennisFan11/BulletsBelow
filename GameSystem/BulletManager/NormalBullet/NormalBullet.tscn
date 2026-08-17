@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c8u06ascod1sj"]
+
+[ext_resource type="PackedScene" uid="uid://mkhirwb7w2d1" path="res://GameSystem/BulletManager/BaseBullet.tscn" id="1_ml3up"]
+[ext_resource type="Script" uid="uid://d8yiarpkihmy" path="res://GameSystem/BulletManager/NormalBullet/normal_bullet.gd" id="2_cxcj0"]
+[ext_resource type="Texture2D" uid="uid://cj472a4rds6gp" path="res://GameSystem/BulletManager/NormalBullet/一般子彈.svg" id="3_cxcj0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxcj0"]
+radius = 16.0
+height = 58.0
+
+[node name="NormalBullet" unique_id=1845915051 node_paths=PackedStringArray("一般子彈") instance=ExtResource("1_ml3up")]
+script = ExtResource("2_cxcj0")
+"一般子彈" = NodePath("一般子彈")
+
+[node name="一般子彈" type="Sprite2D" parent="." index="0" unique_id=952071423]
+texture = ExtResource("3_cxcj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(694893009) index="0" unique_id=1443881335]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_cxcj0")
