@@ -6,7 +6,7 @@ extends WeaponBase
 
 const SPEED := 750.0
 
-func fire():
+func _fire():
 	_bullet_manager.create(
 		BulletManager.TYPE.NORMAL_BULLET,
 		_get_fire_pos(),

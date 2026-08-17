@@ -18,17 +18,24 @@ var _bullet_manager: BulletManager
 ## TODO 射擊槍口火光
 ## TODO 射擊螢幕震動
 ## TODO 射擊音效
-## TODO 射擊CD 
 ## TODO 高速射擊
+
+@export var FIRE_CD: float = 0.4
+var _fire_cd: CooldownTimer = CooldownTimer.new()
 func fire():
+	if not _fire_cd.is_ready():
+		return
+	_fire_cd.trigger(FIRE_CD)
+	_fire()
+	
+
+func _fire():
 	_bullet_manager.create(
 		BulletManager.TYPE.NORMAL_BULLET,
 		_get_fire_pos(),
 		750.0 * _get_fire_angle(),
 		team
-		)
-
-
+	)
 
 
 

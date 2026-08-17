@@ -10,7 +10,7 @@ var DAMAGE: float = 20.0
 ## 初始資料
 var _fire_pos: Vector2
 var _init_vel: Vector2
-## TODO 敵人子彈顏色區別(low)
+## TODO 敵人子彈顏色區別通用化(low)
 var _team: LayerConfig.TEAM 
 
 ## 出生方法 由 BulletManager 調用
