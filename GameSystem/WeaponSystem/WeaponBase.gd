@@ -8,6 +8,7 @@ var _smoke_manager: SmokeManager
 ## PUBLIC
 
 @export var team: LayerConfig.TEAM
+@export var muzzle_flash: MuzzleFlash
 
 @export var flip: bool = false:
 	set(new):
@@ -15,7 +16,6 @@ var _smoke_manager: SmokeManager
 		scale = Vector2(1.0, -1.0 if flip else 1.0)
 
 
-## TODO 射擊槍口火光
 ## TODO 射擊螢幕震動
 ## TODO 射擊音效
 ## TODO 高速射擊
@@ -27,6 +27,7 @@ func fire():
 		return
 	_fire_cd.trigger(FIRE_CD)
 	_fire()
+	muzzle_flash.flash(FIRE_CD)
 	_smoke_manager.create(_get_fire_pos(), _get_fire_angle().angle())
 	
 
