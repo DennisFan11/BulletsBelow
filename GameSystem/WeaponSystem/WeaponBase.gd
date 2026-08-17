@@ -3,6 +3,7 @@ class_name WeaponBase
 extends Node2D
 
 var _bullet_manager: BulletManager
+var _smoke_manager: SmokeManager
 
 ## PUBLIC
 
@@ -14,19 +15,19 @@ var _bullet_manager: BulletManager
 		scale = Vector2(1.0, -1.0 if flip else 1.0)
 
 
-## TODO 射擊煙霧
 ## TODO 射擊槍口火光
 ## TODO 射擊螢幕震動
 ## TODO 射擊音效
 ## TODO 高速射擊
 
-@export var FIRE_CD: float = 0.4
+@export var FIRE_CD: float = 0.12
 var _fire_cd: CooldownTimer = CooldownTimer.new()
 func fire():
 	if not _fire_cd.is_ready():
 		return
 	_fire_cd.trigger(FIRE_CD)
 	_fire()
+	_smoke_manager.create(_get_fire_pos(), _get_fire_angle().angle())
 	
 
 func _fire():

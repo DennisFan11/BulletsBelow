@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8i6lpswqbghw" path="res://GameSystem/CameraManager/CameraManager.tscn" id="3_24kq1"]
 [ext_resource type="PackedScene" uid="uid://dngv530u7cetw" path="res://GameSystem/BulletManager/BulletManager.tscn" id="5_20had"]
 [ext_resource type="PackedScene" uid="uid://b0s2gyboumwa4" path="res://GameSystem/EnemyManager/EnemyManager.tscn" id="6_mhinn"]
+[ext_resource type="PackedScene" path="res://GameSystem/SmokeManager/SmokeManager.tscn" id="7_smoke"]
 
 [node name="GameLoop" type="Node2D" unique_id=336709600]
 script = ExtResource("1_oy0f7")
@@ -20,3 +21,5 @@ tile_map_data = PackedByteArray("AAD6//z/AAAAAAAAAgD7//z/AAAAAAAAAgD7//v/AAAAAAA
 [node name="BulletManager" parent="." unique_id=643958194 instance=ExtResource("5_20had")]
 
 [node name="CameraManager" parent="." unique_id=1624645162 instance=ExtResource("3_24kq1")]
+
+[node name="SmokeManager" parent="." unique_id=808549975 instance=ExtResource("7_smoke")]

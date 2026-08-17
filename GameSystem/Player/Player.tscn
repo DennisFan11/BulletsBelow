@@ -11,6 +11,9 @@ radius = 35.0
 radius = 44.0
 height = 92.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_player"]
+polygon = PackedVector2Array(-32, -18, -18, -32, -1, -37, 20, -32, 40, -16, 44, 1, 40, 19, 34, 32, 25, 43, 11, 47, -1, 47, -22, 41, -38, 21, -38, 2)
+
 [node name="Player" type="Node2D" unique_id=674412155 node_paths=PackedStringArray("hurtbox", "character_body_2d", "bot_body")]
 script = ExtResource("1_01jck")
 hurtbox = NodePath("CharacterBody2D/Hurtbox")
@@ -21,6 +24,11 @@ bot_body = NodePath("CharacterBody2D/BotBody")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1642127070]
 shape = SubResource("CircleShape2D_p3nnt")
+
+[node name="SmokeDisturbanceOccluder" type="LightOccluder2D" parent="CharacterBody2D"]
+occluder_light_mask = 0
+occluder = SubResource("OccluderPolygon2D_player")
+sdf_collision = true
 
 [node name="BotBody" parent="CharacterBody2D" unique_id=1386544545 instance=ExtResource("1_p3nnt")]
 aim_global = Vector2(1270, 760)

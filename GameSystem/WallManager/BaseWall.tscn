@@ -5,8 +5,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yas3"]
 size = Vector2(128, 128)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wall"]
+polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
 [node name="BaseWall" type="StaticBody2D" unique_id=699324153]
 script = ExtResource("1_4yas3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2130237027]
 shape = SubResource("RectangleShape2D_4yas3")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_wall")
+sdf_collision = true

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://GameSystem/SmokeManager/Smoke/Smoke.gd" id="1_smoke"]
+
+[sub_resource type="Gradient" id="Gradient_smoke"]
+offsets = PackedFloat32Array(0.0075, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_smoke"]
+gradient = SubResource("Gradient_smoke")
+fill = 1
+fill_from = Vector2(0.491453, 0.51282054)
+fill_to = Vector2(0.8333333, 0.86752135)
+
+[sub_resource type="Curve" id="Curve_smoke_alpha"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_smoke_alpha"]
+curve = SubResource("Curve_smoke_alpha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_smoke"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 40.87
+angle_min = -720.0
+angle_max = 1.0728835e-05
+initial_velocity_min = 77.27
+initial_velocity_max = 150.0
+gravity = Vector3(0, 0, 0)
+damping_min = 26.930002
+damping_max = 48.294003
+scale_max = 1.5
+alpha_curve = SubResource("CurveTexture_smoke_alpha")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.4
+
+[node name="Smoke" type="GPUParticles2D"]
+amount = 4
+texture = SubResource("GradientTexture_smoke")
+lifetime = 3.0
+explosiveness = 1.0
+visibility_rect = Rect2(-250, -250, 500, 500)
+process_material = SubResource("ParticleProcessMaterial_smoke")
+script = ExtResource("1_smoke")

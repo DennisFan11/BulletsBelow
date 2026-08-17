@@ -3,11 +3,19 @@
 [ext_resource type="Script" uid="uid://1maei8jccy4o" path="res://GameSystem/BulletManager/BaseBullet.gd" id="1_sgssj"]
 [ext_resource type="PackedScene" uid="uid://bx1jkn47grc7h" path="res://Components/HitBox/Hitbox.tscn" id="2_yx3xx"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bullet"]
+polygon = PackedVector2Array(-37, -16, 37, -16, 37, 16, -37, 16)
+
 [node name="BaseBullet" type="Node2D" unique_id=1845915051 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_sgssj")
 hitbox = NodePath("Hitbox")
 
 [node name="Hitbox" parent="." unique_id=694893009 instance=ExtResource("2_yx3xx")]
+
+[node name="SmokeDisturbanceOccluder" type="LightOccluder2D" parent="." unique_id=300888444]
+visible = false
+occluder = SubResource("OccluderPolygon2D_bullet")
+occluder_light_mask = 0
 
 [connection signal="hit_wall" from="Hitbox" to="." method="_on_hitbox_hit_wall"]
 [connection signal="on_hit" from="Hitbox" to="." method="_on_hitbox_on_hit"]
